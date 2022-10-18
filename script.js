@@ -4,6 +4,10 @@ function setAttributes(elem, attrs) {
     }
 }
 
+function deleteEntry(button) {
+    button.parentElement.parentElement.remove();
+}
+
 document.getElementById('add').onsubmit = () => {
     const tbody = document.querySelector('tbody');
     const platform = document.getElementById('platform');
@@ -13,7 +17,8 @@ document.getElementById('add').onsubmit = () => {
     button.append('Delete');
     setAttributes(button, {
         'class': 'delete',
-        'type': 'button'
+        'type': 'button',
+        'onclick': 'deleteEntry(this)'
     });
 
     let row = document.createElement('tr');
