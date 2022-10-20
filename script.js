@@ -1,8 +1,3 @@
-if (!localStorage.getItem('entries')) {
-    const entries = [];
-    localStorage.setItem('entries', JSON.stringify(entries));
-}
-
 function setAttributes(elem, attrs) {
     for (const key in attrs) {
         elem.setAttribute(key, attrs[key]);
@@ -52,6 +47,11 @@ function createTableRow(platform, id) {
     row.appendChild(cell2);
     row.appendChild(cell3);
     tbody.append(row);
+}
+
+if (!localStorage.getItem('entries')) {
+    const entries = [];
+    localStorage.setItem('entries', JSON.stringify(entries));
 }
 
 const data = JSON.parse(localStorage.entries);
