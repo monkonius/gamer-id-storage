@@ -1,5 +1,5 @@
 if (!localStorage.getItem('entries')) {
-    let entries = [];
+    const entries = [];
     localStorage.setItem('entries', JSON.stringify(entries));
 }
 
@@ -39,10 +39,10 @@ function createTableRow(platform, id) {
         'onclick': 'deleteEntry(this)'
     });
 
-    let row = document.createElement('tr');
-    let cell1 = document.createElement('td');
-    let cell2 = document.createElement('td');
-    let cell3 = document.createElement('td');
+    const row = document.createElement('tr');
+    const cell1 = document.createElement('td');
+    const cell2 = document.createElement('td');
+    const cell3 = document.createElement('td');
 
     cell1.innerHTML = platform;
     cell2.innerHTML = id;
@@ -54,8 +54,8 @@ function createTableRow(platform, id) {
     tbody.append(row);
 }
 
-let data = JSON.parse(localStorage.entries);
-for (let entry of data) {
+const data = JSON.parse(localStorage.entries);
+for (const entry of data) {
     createTableRow(entry.platform, entry.id);
 }
 
@@ -64,7 +64,7 @@ document.getElementById('add').onsubmit = () => {
     const id = document.getElementById('id');
     createTableRow(platform.value, id.value);
 
-    let data = JSON.parse(localStorage.entries);
+    const data = JSON.parse(localStorage.entries);
     data.push({ 'platform': platform.value, 'id': id.value })
     localStorage.setItem('entries', JSON.stringify(data));
 
