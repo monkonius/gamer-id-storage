@@ -1,3 +1,8 @@
+if (!localStorage.getItem('entries')) {
+    let entries = [];
+    localStorage.setItem('entries', JSON.stringify(entries));
+}
+
 function setAttributes(elem, attrs) {
     for (const key in attrs) {
         elem.setAttribute(key, attrs[key]);
@@ -29,13 +34,18 @@ document.getElementById('add').onsubmit = () => {
     cell1.innerHTML = platform.value;
     cell2.innerHTML = id.value;
     cell3.innerHTML = button.outerHTML;
-    platform.value = '';
-    id.value = '';
-
+    
     row.appendChild(cell1);
     row.appendChild(cell2);
     row.appendChild(cell3);
     tbody.append(row);
-
+    
+    let data = JSON.parse(localStorage.entries);
+    data.push({ 'platform': platform.value, 'id': id.value })
+    localStorage.setItem('entries', JSON.stringify(data));
+    
+    platform.value = '';
+    id.value = '';
+    
     return false;
 }
