@@ -10,7 +10,22 @@ function setAttributes(elem, attrs) {
 }
 
 function deleteEntry(button) {
-    button.parentElement.parentElement.remove();
+    const data = JSON.parse(localStorage.entries);
+    const trow = button.parentElement.parentElement;
+    const platform = trow.firstElementChild.innerHTML;
+
+    let index = -1;
+    for (const key in data) {
+        if (data[key].platform === platform) {
+            index = key;
+        }
+    }
+    if (index > -1) {
+        data.splice(index, 1);
+    }
+
+    trow.remove();
+    localStorage.setItem('entries', JSON.stringify(data));
 }
 
 function createTableRow(platform, id) {
