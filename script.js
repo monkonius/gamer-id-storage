@@ -13,6 +13,35 @@ function deleteEntry(button) {
     button.parentElement.parentElement.remove();
 }
 
+let data = JSON.parse(localStorage.entries);
+for (let entry of data) {
+    const tbody = document.querySelector('tbody');
+    const platform = entry.platform;
+    const id = entry.id;
+
+    const button = document.createElement('button');
+    button.append('Delete');
+    setAttributes(button, {
+        'class': 'delete',
+        'type': 'button',
+        'onclick': 'deleteEntry(this)'
+    });
+
+    let row = document.createElement('tr');
+    let cell1 = document.createElement('td');
+    let cell2 = document.createElement('td');
+    let cell3 = document.createElement('td');
+
+    cell1.innerHTML = platform;
+    cell2.innerHTML = id;
+    cell3.innerHTML = button.outerHTML;
+
+    row.appendChild(cell1);
+    row.appendChild(cell2);
+    row.appendChild(cell3);
+    tbody.append(row);
+}
+
 document.getElementById('add').onsubmit = () => {
     const tbody = document.querySelector('tbody');
     const platform = document.getElementById('platform');
@@ -39,13 +68,13 @@ document.getElementById('add').onsubmit = () => {
     row.appendChild(cell2);
     row.appendChild(cell3);
     tbody.append(row);
-    
+
     let data = JSON.parse(localStorage.entries);
     data.push({ 'platform': platform.value, 'id': id.value })
     localStorage.setItem('entries', JSON.stringify(data));
-    
+
     platform.value = '';
     id.value = '';
-    
+
     return false;
 }
