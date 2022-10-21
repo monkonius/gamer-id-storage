@@ -49,21 +49,29 @@ function createTableRow(platform, id) {
     tbody.append(row);
 }
 
+function tableSort() {
+    const data = JSON.parse(localStorage.entries);
+    data.sort((a, b) => {
+        const platformA = a.platform.toUpperCase();
+        const platformB = b.platform.toUpperCase();
+        if (platformA < platformB) return -1;
+        if (platformA > platformB) return 1;
+        return 0;
+    });
+
+    const tbody = document.querySelector('tbody');
+    while (tbody.hasChildNodes()) {
+        tbody.removeChild(tbody.firstChild);
+    }
+    
+    for (const entry of data) {
+        createTableRow(entry.platform, entry.id);
+    }
+}
+
 if (!localStorage.getItem('entries')) {
     const entries = [];
     localStorage.setItem('entries', JSON.stringify(entries));
-}
-
-const data = JSON.parse(localStorage.entries);
-data.sort((a, b) => {
-    const platformA = a.platform.toUpperCase();
-    const platformB = b.platform.toUpperCase();
-    if (platformA < platformB) return -1;
-    if (platformA > platformB) return 1;
-    return 0;
-});
-for (const entry of data) {
-    createTableRow(entry.platform, entry.id);
 }
 
 document.getElementById('add').onsubmit = () => {
@@ -78,5 +86,9 @@ document.getElementById('add').onsubmit = () => {
     platform.value = '';
     id.value = '';
 
+    tableSort();
+
     return false;
 }
+
+tableSort();
