@@ -55,6 +55,13 @@ if (!localStorage.getItem('entries')) {
 }
 
 const data = JSON.parse(localStorage.entries);
+data.sort((a, b) => {
+    const platformA = a.platform.toUpperCase();
+    const platformB = b.platform.toUpperCase();
+    if (platformA < platformB) return -1;
+    if (platformA > platformB) return 1;
+    return 0;
+});
 for (const entry of data) {
     createTableRow(entry.platform, entry.id);
 }
