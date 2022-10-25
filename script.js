@@ -77,9 +77,17 @@ if (!localStorage.getItem('entries')) {
 document.getElementById('add').onsubmit = () => {
     const platform = document.getElementById('platform');
     const id = document.getElementById('id');
+    const data = JSON.parse(localStorage.entries);
+
+    for (const entry of data) {
+        if (platform.value.toUpperCase() === entry.platform.toUpperCase()) {
+            alert('That entry already exists');
+            return false;
+        }
+    }
+
     createTableRow(platform.value, id.value);
 
-    const data = JSON.parse(localStorage.entries);
     data.push({ 'platform': platform.value, 'id': id.value })
     localStorage.setItem('entries', JSON.stringify(data));
 
