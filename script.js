@@ -26,9 +26,9 @@ function deleteEntry(button) {
 function createTableRow(platform, id) {
     const tbody = document.querySelector('tbody');
 
-    const button = document.createElement('button');
-    button.append('Delete');
-    setAttributes(button, {
+    const del = document.createElement('button');
+    del.append('Delete');
+    setAttributes(del, {
         'class': 'delete',
         'type': 'button',
         'onclick': 'deleteEntry(this)'
