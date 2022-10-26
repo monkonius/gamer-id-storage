@@ -4,6 +4,14 @@ function setAttributes(elem, attrs) {
     }
 }
 
+function copyEntry(button) {
+    const trow = button.parentElement.parentElement;
+    const id = trow.children[1].innerHTML
+
+    navigator.clipboard.writeText(id);
+    alert(`Copied ID: ${id}`);
+}
+
 function deleteEntry(button) {
     const data = JSON.parse(localStorage.entries);
     const trow = button.parentElement.parentElement;
@@ -31,6 +39,7 @@ function createTableRow(platform, id) {
     setAttributes(copy, {
         'class': 'copy',
         'type': 'button',
+        'onclick': 'copyEntry(this)'
     })
 
     const del = document.createElement('button');
