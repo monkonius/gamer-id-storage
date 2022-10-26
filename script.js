@@ -26,6 +26,13 @@ function deleteEntry(button) {
 function createTableRow(platform, id) {
     const tbody = document.querySelector('tbody');
 
+    const copy = document.createElement('button');
+    copy.append('Copy');
+    setAttributes(copy, {
+        'class': 'copy',
+        'type': 'button',
+    })
+
     const del = document.createElement('button');
     del.append('Delete');
     setAttributes(del, {
@@ -38,14 +45,17 @@ function createTableRow(platform, id) {
     const cell1 = document.createElement('td');
     const cell2 = document.createElement('td');
     const cell3 = document.createElement('td');
+    const cell4 = document.createElement('td');
 
     cell1.innerHTML = platform;
     cell2.innerHTML = id;
-    cell3.innerHTML = button.outerHTML;
+    cell3.innerHTML = copy.outerHTML;
+    cell4.innerHTML = del.outerHTML;
 
     row.appendChild(cell1);
     row.appendChild(cell2);
     row.appendChild(cell3);
+    row.append(cell4);
     tbody.append(row);
 }
 
