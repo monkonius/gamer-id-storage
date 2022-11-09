@@ -6,10 +6,11 @@ function setAttributes(elem, attrs) {
 
 function copyEntry(button) {
     const trow = button.parentElement.parentElement;
+    const platform = trow.children[0].innerHTML;
     const id = trow.children[1].innerHTML
 
     navigator.clipboard.writeText(id);
-    alert(`Copied ID: ${id}`);
+    alert(`Copied ${platform} ID: ${id}`);
 }
 
 function deleteEntry(button) {
