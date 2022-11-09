@@ -43,6 +43,13 @@ function createTableRow(platform, id) {
         'onclick': 'copyEntry(this)'
     })
 
+    const edit = document.createElement('button');
+    edit.append('Edit');
+    setAttributes(edit, {
+        'class': 'edit',
+        'type': 'button',
+    })
+
     const del = document.createElement('button');
     del.append('Delete');
     setAttributes(del, {
@@ -56,16 +63,19 @@ function createTableRow(platform, id) {
     const cell2 = document.createElement('td');
     const cell3 = document.createElement('td');
     const cell4 = document.createElement('td');
+    const cell5 = document.createElement('td');
 
     cell1.innerHTML = platform;
     cell2.innerHTML = id;
     cell3.innerHTML = copy.outerHTML;
-    cell4.innerHTML = del.outerHTML;
+    cell4.innerHTML = edit.outerHTML;
+    cell5.innerHTML = del.outerHTML;
 
     row.appendChild(cell1);
     row.appendChild(cell2);
     row.appendChild(cell3);
-    row.append(cell4);
+    row.appendChild(cell4);
+    row.appendChild(cell5);
     tbody.append(row);
 }
 
