@@ -18,6 +18,7 @@ function editEntry(button) {
     const platform = document.getElementById('platform');
     const id = document.getElementById('id');
 
+    platform.focus();
     platform.value = trow.children[0].innerHTML;
     id.value = trow.children[1].innerHTML;
 
