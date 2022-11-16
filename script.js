@@ -7,10 +7,21 @@ function setAttributes(elem, attrs) {
 function copyEntry(button) {
     const trow = button.parentElement.parentElement;
     const platform = trow.children[0].innerHTML;
-    const id = trow.children[1].innerHTML
+    const id = trow.children[1].innerHTML;
 
     navigator.clipboard.writeText(id);
     alert(`Copied ${platform} ID: ${id}`);
+}
+
+function editEntry(button) {
+    const trow = button.parentElement.parentElement;
+    const platform = document.getElementById('platform');
+    const id = document.getElementById('id');
+
+    platform.value = trow.children[0].innerHTML;
+    id.value = trow.children[1].innerHTML;
+
+    deleteEntry(button);
 }
 
 function deleteEntry(button) {
@@ -48,6 +59,7 @@ function createTableRow(platform, id) {
     setAttributes(edit, {
         'class': 'edit',
         'type': 'button',
+        'onclick': 'editEntry(this)'
     })
 
     const del = document.createElement('button');
