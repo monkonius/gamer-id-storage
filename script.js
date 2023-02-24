@@ -71,25 +71,18 @@ function createTableRow(platform, id) {
         'onclick': 'deleteEntry(this)'
     });
 
-    const row = document.createElement('tr');
-    const cell1 = document.createElement('td');
-    const cell2 = document.createElement('td');
-    const cell3 = document.createElement('td');
-    const cell4 = document.createElement('td');
-    const cell5 = document.createElement('td');
+    const row = tbody.insertRow(-1);
+    const cell1 = row.insertCell(0);
+    const cell2 = row.insertCell(1);
+    const cell3 = row.insertCell(2);
+    const cell4 = row.insertCell(3);
+    const cell5 = row.insertCell(4);
 
     cell1.innerHTML = platform;
     cell2.innerHTML = id;
     cell3.innerHTML = copy.outerHTML;
     cell4.innerHTML = edit.outerHTML;
     cell5.innerHTML = del.outerHTML;
-
-    row.appendChild(cell1);
-    row.appendChild(cell2);
-    row.appendChild(cell3);
-    row.appendChild(cell4);
-    row.appendChild(cell5);
-    tbody.append(row);
 }
 
 function tableSort() {
