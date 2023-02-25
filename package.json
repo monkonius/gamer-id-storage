@@ -1,0 +1,16 @@
+{
+  "name": "gamer-id-storage",
+  "version": "1.0.0",
+  "description": "Just to test out `localStorage` and sorting table rows. Rows are sorted alphabetically by platform.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tailwindcss -i ./src/input.css -o ./dist/style.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.2.7"
+  }
+}
