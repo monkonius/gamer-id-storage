@@ -19,8 +19,8 @@ function editEntry(button) {
     const id = document.getElementById('id');
 
     platform.focus();
-    platform.value = trow.children[0].innerHTML;
-    id.value = trow.children[1].innerHTML;
+    platform.value = trow.children[1].innerHTML;
+    id.value = trow.children[2].innerHTML;
 
     deleteEntry(button);
 }
