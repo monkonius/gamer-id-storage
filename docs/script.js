@@ -6,8 +6,8 @@ function setAttributes(elem, attrs) {
 
 function copyEntry(button) {
     const trow = button.parentElement.parentElement;
-    const platform = trow.children[0].innerHTML;
-    const id = trow.children[1].innerHTML;
+    const platform = trow.children[1].innerHTML;
+    const id = trow.children[2].innerHTML;
 
     navigator.clipboard.writeText(id);
     alert(`Copied ${platform} ID: ${id}`);
@@ -44,13 +44,13 @@ function deleteEntry(button) {
     localStorage.setItem('entries', JSON.stringify(data));
 }
 
-function createTableRow(platform, id) {
+function createTableRow(number, platform, id) {
     const tbody = document.querySelector('tbody');
 
     const copy = document.createElement('button');
     copy.append('Copy');
     setAttributes(copy, {
-        'class': 'copy',
+        'class': 'btn copy',
         'type': 'button',
         'onclick': 'copyEntry(this)'
     })
@@ -58,7 +58,7 @@ function createTableRow(platform, id) {
     const edit = document.createElement('button');
     edit.append('Edit');
     setAttributes(edit, {
-        'class': 'edit',
+        'class': 'btn edit',
         'type': 'button',
         'onclick': 'editEntry(this)'
     })
@@ -66,7 +66,7 @@ function createTableRow(platform, id) {
     const del = document.createElement('button');
     del.append('Delete');
     setAttributes(del, {
-        'class': 'delete',
+        'class': 'btn delete',
         'type': 'button',
         'onclick': 'deleteEntry(this)'
     });
@@ -76,13 +76,14 @@ function createTableRow(platform, id) {
     const cell2 = row.insertCell(1);
     const cell3 = row.insertCell(2);
     const cell4 = row.insertCell(3);
-    const cell5 = row.insertCell(4);
 
-    cell1.innerHTML = platform;
-    cell2.innerHTML = id;
-    cell3.innerHTML = copy.outerHTML;
-    cell4.innerHTML = edit.outerHTML;
-    cell5.innerHTML = del.outerHTML;
+    cell1.innerHTML = number;
+    cell2.innerHTML = platform;
+    cell3.innerHTML = id;
+    cell4.append(copy, edit, del);
+    setAttributes(cell4, {
+        'class': 'options'
+    });
 }
 
 function tableSort() {
@@ -100,8 +101,8 @@ function tableSort() {
         tbody.removeChild(tbody.firstChild);
     }
     
-    for (const entry of data) {
-        createTableRow(entry.platform, entry.id);
+    for (const index in data) {
+        createTableRow(+index + 1, data[index].platform, data[index].id);
     }
 }
 
@@ -121,8 +122,6 @@ document.getElementById('add').onsubmit = () => {
             return false;
         }
     }
-
-    createTableRow(platform.value, id.value);
 
     data.push({ 'platform': platform.value, 'id': id.value })
     localStorage.setItem('entries', JSON.stringify(data));

@@ -9,23 +9,33 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Gamer ID Storage</h1>
-    <p>One place to store all of your gamer tags and IDs for easy referral</p>
-    <h2>Add Entry</h2>
-    <form id="add">
-        <input type="text" name="platform" id="platform" autocomplete="off" required placeholder="Platform">
-        <input type="text" name="id" id="id" autocomplete="off" required placeholder="ID">
-        <input type="submit" value="Save">
-    </form>
-    <h2>Tags</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Platform</th>
-                <th>ID</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
+    <div class="mx-auto px-6 md:max-w-4xl">
+        <div class="pt-20 pb-12">
+            <h1 class="text-4xl font-bold">Gamer ID Storage</h1>
+            <p class="mt-2 text-lg text-gray-600">One place to store all of your gamer tags and IDs for easy referral</p>
+        </div>
+        <div class="border-t-2 py-12">
+            <h2 class="text-2xl font-bold">Add Entry</h2>
+            <form id="add" class="mt-4">
+                <input class="border rounded px-3 py-2 w-2/5" type="text" name="platform" id="platform" autocomplete="off" required placeholder="Platform">
+                <input class="border rounded px-3 py-2 w-2/5" type="text" name="id" id="id" autocomplete="off" required placeholder="ID">
+                <input class="btn max-sm:mt-2" type="submit" value="Save">
+            </form>
+        </div>
+        <div class="border-t-2 py-12">
+            <h2 class="text-2xl font-bold">Tags</h2>
+            <table class="mt-4 w-full">
+                <thead class="bg-gray-50 border-b-2 border-gray-600">
+                    <tr>
+                        <th class="p-2 w-4 text-left">No.</th>
+                        <th class="p-2 text-left">Platform</th>
+                        <th class="p-2 w-64 text-left">ID</th>
+                        <th class="p-2 w-64 text-center">Options</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
 </body>
 </html>

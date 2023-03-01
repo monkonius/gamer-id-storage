@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+td {
+    @apply p-2;
+}
+
+.btn {
+    @apply bg-gray-700 hover:bg-gray-600 text-white font-semibold h-[42px] py-2 px-4 rounded;
+}
+
+@media (min-width: 768px) {
+    .options {
+        display: flex;
+        justify-content: center;
+        gap: 0.25em;
+    }
+}
+
+@media (max-width: 767px) {
+    .options {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.25em;
+    }
+}
