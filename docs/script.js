@@ -28,7 +28,7 @@ function editEntry(button) {
 function deleteEntry(button) {
     const data = JSON.parse(localStorage.entries);
     const trow = button.parentElement.parentElement;
-    const platform = trow.firstElementChild.innerHTML;
+    const platform = trow.children[1].innerHTML;
 
     let index = -1;
     for (const key in data) {
@@ -42,6 +42,8 @@ function deleteEntry(button) {
 
     trow.remove();
     localStorage.setItem('entries', JSON.stringify(data));
+
+    tableSort();
 }
 
 function createTableRow(number, platform, id) {
