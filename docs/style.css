@@ -640,6 +640,11 @@ td {
   padding: 0.5rem;
 }
 
+tbody > tr:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+}
+
 .btn {
   height: 42px;
   border-radius: 0.25rem;
