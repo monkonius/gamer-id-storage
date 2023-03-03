@@ -10,6 +10,10 @@ tbody > tr {
     @apply hover:bg-gray-50;
 }
 
+.text-input {
+    @apply border rounded px-3 py-2 w-2/5;
+}
+
 .btn {
     @apply bg-gray-700 hover:bg-gray-600 text-white font-semibold h-[42px] py-2 px-4 rounded;
 }
