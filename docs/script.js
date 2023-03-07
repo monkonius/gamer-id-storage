@@ -133,6 +133,18 @@ document.getElementById('add').onsubmit = () => {
 
     tableSort();
 
+    const notif = document.getElementById('notif');
+    const message = document.getElementById('notif-message');
+
+    message.innerHTML = 'Entry saved';
+    notif.classList.toggle('show');
+    notif.classList.toggle('hide');
+
+    setTimeout(() => {
+        notif.classList.toggle('show');
+        notif.classList.toggle('hide');
+    }, 2000);
+    
     return false;
 }
 
