@@ -530,10 +530,6 @@ video {
   display: table;
 }
 
-.hidden {
-  display: none;
-}
-
 .w-4 {
   width: 1rem;
 }

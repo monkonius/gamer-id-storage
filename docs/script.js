@@ -10,7 +10,18 @@ function copyEntry(button) {
     const id = trow.children[2].innerHTML;
 
     navigator.clipboard.writeText(id);
-    alert(`Copied ${platform} ID: ${id}`);
+
+    const notif = document.getElementById('notif');
+    const message = document.getElementById('notif-message');
+
+    message.innerHTML = `Copied ${platform} ID: ${id}`;
+    notif.classList.toggle('show');
+    notif.classList.toggle('hide');
+
+    setTimeout(() => {
+        notif.classList.toggle('show');
+        notif.classList.toggle('hide');
+    }, 2000);
 }
 
 function editEntry(button) {
@@ -44,6 +55,18 @@ function deleteEntry(button) {
     localStorage.setItem('entries', JSON.stringify(data));
 
     tableSort();
+
+    const notif = document.getElementById('notif');
+    const message = document.getElementById('notif-message');
+
+    message.innerHTML = 'Entry deleted';
+    notif.classList.toggle('show');
+    notif.classList.toggle('hide');
+
+    setTimeout(() => {
+        notif.classList.toggle('show');
+        notif.classList.toggle('hide');
+    }, 2000);
 }
 
 function createTableRow(number, platform, id) {
