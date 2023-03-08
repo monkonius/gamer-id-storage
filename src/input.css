@@ -10,7 +10,7 @@ tbody > tr {
     @apply hover:bg-gray-50;
 }
 
-.notif-div {
+#notif {
     @apply bg-white shadow border rounded fixed top-8 left-1/2 py-2 px-4 h-[42px] -translate-x-1/2;
 }
 

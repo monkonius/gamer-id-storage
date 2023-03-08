@@ -631,7 +631,7 @@ tbody > tr:hover {
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
-.notif-div {
+#notif {
   position: fixed;
   top: 2rem;
   left: 50%;
