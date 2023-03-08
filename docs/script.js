@@ -33,10 +33,10 @@ function editEntry(button) {
     platform.value = trow.children[1].innerHTML;
     id.value = trow.children[2].innerHTML;
 
-    deleteEntry(button);
+    deleteEntry(button, true);
 }
 
-function deleteEntry(button) {
+function deleteEntry(button, edited = false) {
     const data = JSON.parse(localStorage.entries);
     const trow = button.parentElement.parentElement;
     const platform = trow.children[1].innerHTML;
@@ -56,17 +56,19 @@ function deleteEntry(button) {
 
     tableSort();
 
-    const notif = document.getElementById('notif');
-    const message = document.getElementById('notif-message');
+    if (!edited) {
+        const notif = document.getElementById('notif');
+        const message = document.getElementById('notif-message');
 
-    message.innerHTML = 'Entry deleted';
-    notif.classList.toggle('show');
-    notif.classList.toggle('hide');
-
-    setTimeout(() => {
+        message.innerHTML = 'Entry deleted';
         notif.classList.toggle('show');
         notif.classList.toggle('hide');
-    }, 2000);
+    
+        setTimeout(() => {
+            notif.classList.toggle('show');
+            notif.classList.toggle('hide');
+        }, 2000);
+    }
 }
 
 function createTableRow(number, platform, id) {
