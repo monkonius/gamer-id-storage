@@ -158,12 +158,30 @@ document.getElementById('add').onsubmit = () => {
 
     tableSort();
 
-    const notif = document.getElementById('notif');
-    const message = document.getElementById('notif-message');
+    const check = document.getElementById('notif');
+    if (check) {
+        check.remove();
+    }
+
+    const notif = document.createElement('div');
+    setAttributes(notif, {
+        'class': 'hide',
+        'id': 'notif'
+    });
+
+    const message = document.createElement('span');
+    setAttributes(message, {
+        'class': 'font-semibold',
+        'id': 'notif-message'
+    });
+    notif.append(message);
 
     message.innerHTML = 'Entry saved';
     notif.classList.toggle('show');
     notif.classList.toggle('hide');
+
+    const div = document.querySelector('div');
+    div.prepend(notif);
 
     setTimeout(() => {
         notif.classList.toggle('show');

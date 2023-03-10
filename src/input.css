@@ -23,13 +23,35 @@ tbody > tr {
 }
 
 .show {
-    opacity: 100%;
-    transition: opacity 0.5s;
+    animation-name: show;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
 }
 
 .hide {
-    opacity: 0%;
-    transition: opacity 0.5s;
+    animation-name: hide;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes show {
+    from {
+        opacity: 0%;
+    }
+
+    to {
+        opacity: 100%;
+    }
+}
+
+@keyframes hide {
+    from {
+        opacity: 100%;
+    }
+
+    to {
+        opacity: 0%;
+    }
 }
 
 @media (min-width: 768px) {
