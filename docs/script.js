@@ -71,6 +71,42 @@ function deleteEntry(button, edited = false) {
     }
 }
 
+function createNotif(message) {
+    const check = document.getElementById('notif');
+    if (check) {
+        check.remove();
+    }
+
+    const notif = document.createElement('div');
+    setAttributes(notif, {
+        'class': 'hide',
+        'id': 'notif'
+    });
+
+    const notifMessage = document.createElement('span');
+    setAttributes(notifMessage, {
+        'class': 'font-semibold',
+        'id': 'notif-notifMessage'
+    });
+    notif.append(notifMessage);
+
+    notifMessage.innerHTML = message;
+    notif.classList.toggle('show');
+    notif.classList.toggle('hide');
+
+    const div = document.querySelector('div');
+    div.prepend(notif);
+
+    setTimeout(() => {
+        notif.classList.toggle('show');
+        notif.classList.toggle('hide');
+    }, 2000);
+
+    setTimeout(() => {
+        notif.remove();
+    }, 2500);
+}
+
 function createTableRow(number, platform, id) {
     const tbody = document.querySelector('tbody');
 
@@ -157,36 +193,7 @@ document.getElementById('add').onsubmit = () => {
     id.value = '';
 
     tableSort();
-
-    const check = document.getElementById('notif');
-    if (check) {
-        check.remove();
-    }
-
-    const notif = document.createElement('div');
-    setAttributes(notif, {
-        'class': 'hide',
-        'id': 'notif'
-    });
-
-    const message = document.createElement('span');
-    setAttributes(message, {
-        'class': 'font-semibold',
-        'id': 'notif-message'
-    });
-    notif.append(message);
-
-    message.innerHTML = 'Entry saved';
-    notif.classList.toggle('show');
-    notif.classList.toggle('hide');
-
-    const div = document.querySelector('div');
-    div.prepend(notif);
-
-    setTimeout(() => {
-        notif.classList.toggle('show');
-        notif.classList.toggle('hide');
-    }, 2000);
+    createNotif('Entry saved');
     
     return false;
 }
