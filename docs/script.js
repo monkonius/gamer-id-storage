@@ -11,17 +11,7 @@ function copyEntry(button) {
 
     navigator.clipboard.writeText(id);
 
-    const notif = document.getElementById('notif');
-    const message = document.getElementById('notif-message');
-
-    message.innerHTML = `Copied ${platform} ID: ${id}`;
-    notif.classList.toggle('show');
-    notif.classList.toggle('hide');
-
-    setTimeout(() => {
-        notif.classList.toggle('show');
-        notif.classList.toggle('hide');
-    }, 2000);
+    createNotif(`Copied ${platform} ID: ${id}`);
 }
 
 function editEntry(button) {
@@ -57,17 +47,7 @@ function deleteEntry(button, edited = false) {
     tableSort();
 
     if (!edited) {
-        const notif = document.getElementById('notif');
-        const message = document.getElementById('notif-message');
-
-        message.innerHTML = 'Entry deleted';
-        notif.classList.toggle('show');
-        notif.classList.toggle('hide');
-    
-        setTimeout(() => {
-            notif.classList.toggle('show');
-            notif.classList.toggle('hide');
-        }, 2000);
+        createNotif('Entry deleted');
     }
 }
 
@@ -181,7 +161,7 @@ document.getElementById('add').onsubmit = () => {
 
     for (const entry of data) {
         if (platform.value.toUpperCase() === entry.platform.toUpperCase()) {
-            alert('That entry already exists');
+            createNotif('That entry already exists');
             return false;
         }
     }
