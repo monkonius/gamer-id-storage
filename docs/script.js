@@ -66,7 +66,7 @@ function createNotif(message) {
     const notifMessage = document.createElement('span');
     setAttributes(notifMessage, {
         'class': 'font-semibold',
-        'id': 'notif-notifMessage'
+        'id': 'notif-message'
     });
     notif.append(notifMessage);
 
