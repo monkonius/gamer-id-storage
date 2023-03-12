@@ -687,15 +687,11 @@ tbody > tr:hover {
 }
 
 .show {
-  animation-name: show;
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
+  animation: show 0.5s forwards;
 }
 
 .hide {
-  animation-name: hide;
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
+  animation: hide 0.5s forwards;
 }
 
 @keyframes show {

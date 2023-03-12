@@ -33,29 +33,21 @@ function deleteEntry(button, edited = false) {
 
     let index = -1;
     for (const key in data) {
-        if (data[key].platform === platform) {
-            index = key;
-        }
+        if (data[key].platform === platform) index = key;
     }
-    if (index > -1) {
-        data.splice(index, 1);
-    }
+    if (index > -1) data.splice(index, 1);
 
     trow.remove();
     localStorage.setItem('entries', JSON.stringify(data));
 
     tableSort();
 
-    if (!edited) {
-        createNotif('Entry deleted');
-    }
+    if (!edited) createNotif('Entry deleted');
 }
 
 function createNotif(message) {
     const check = document.getElementById('notif');
-    if (check) {
-        check.remove();
-    }
+    if (check) check.remove();
 
     const notif = document.createElement('div');
     setAttributes(notif, {
