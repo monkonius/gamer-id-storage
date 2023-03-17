@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="One place to store all of your gamer tags and IDs for easy referral.">
     <title>Gamer ID Storage</title>
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="./style.css">
@@ -11,19 +12,19 @@
 </head>
 <body>
     <div class="mx-auto px-6 md:max-w-4xl">
-        <div class="pt-20 pb-12">
+        <section class="pt-20 pb-12">
             <h1 class="text-4xl font-bold">Gamer ID Storage</h1>
             <p class="mt-2 text-lg text-gray-600">One place to store all of your gamer tags and IDs for easy referral</p>
-        </div>
-        <div class="border-t-2 py-12">
+        </section>
+        <section class="border-t-2 py-12">
             <h2 class="text-2xl font-bold">Add Entry</h2>
             <form id="add" class="mt-4">
                 <input class="text-input" type="text" name="platform" id="platform" autocomplete="off" required placeholder="Platform">
                 <input class="text-input" type="text" name="id" id="id" autocomplete="off" required placeholder="ID">
                 <input class="btn cursor-pointer max-sm:mt-2" type="submit" value="Save">
             </form>
-        </div>
-        <div class="border-t-2 py-12">
+        </section>
+        <section class="border-t-2 py-12">
             <h2 class="text-2xl font-bold">Tags</h2>
             <table class="mt-4 w-full">
                 <thead class="bg-gray-50 border-b-2 border-gray-600">
@@ -36,7 +37,7 @@
                 </thead>
                 <tbody></tbody>
             </table>
-        </div>
+        </section>
     </div>
 </body>
 </html>
