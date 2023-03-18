@@ -31,11 +31,14 @@ function deleteEntry(button, edited = false) {
     const trow = button.parentElement.parentElement;
     const platform = trow.children[1].innerHTML;
 
-    let index = -1;
+    let index;
     for (const key in data) {
-        if (data[key].platform === platform) index = key;
+        if (data[key].platform === platform) {
+            index = key;
+            break;
+        }
     }
-    if (index > -1) data.splice(index, 1);
+    data.splice(index, 1);
 
     trow.remove();
     localStorage.setItem('entries', JSON.stringify(data));
@@ -116,9 +119,7 @@ function createTableRow(number, platform, id) {
     cell2.innerHTML = platform;
     cell3.innerHTML = id;
     cell4.append(copy, edit, del);
-    setAttributes(cell4, {
-        'class': 'options'
-    });
+    cell4.setAttribute('class', 'options');
 }
 
 function tableSort() {
