@@ -49,8 +49,8 @@ function deleteEntry(button, edited = false) {
 }
 
 function createNotif(message) {
-    const check = document.getElementById('notif');
-    if (check) check.remove();
+    const prevNotif = document.getElementById('notif');
+    if (prevNotif) prevNotif.remove();
 
     const notif = document.createElement('div');
     setAttributes(notif, {
@@ -59,10 +59,7 @@ function createNotif(message) {
     });
 
     const notifMessage = document.createElement('span');
-    setAttributes(notifMessage, {
-        'class': 'font-semibold',
-        'id': 'notif-message'
-    });
+    notifMessage.setAttribute('class', 'font-semibold');
     notif.append(notifMessage);
 
     notifMessage.innerHTML = message;
