@@ -1,3 +1,34 @@
+if (!localStorage.getItem('entries')) {
+    const entries = [];
+    localStorage.setItem('entries', JSON.stringify(entries));
+}
+
+document.getElementById('add').onsubmit = () => {
+    const platform = document.getElementById('platform');
+    const id = document.getElementById('id');
+    const data = JSON.parse(localStorage.entries);
+
+    for (const entry of data) {
+        if (platform.value.toUpperCase() === entry.platform.toUpperCase()) {
+            createNotif('That entry already exists');
+            return false;
+        }
+    }
+
+    data.push({ 'platform': platform.value, 'id': id.value })
+    localStorage.setItem('entries', JSON.stringify(data));
+
+    platform.value = '';
+    id.value = '';
+
+    tableSort();
+    createNotif('Entry saved');
+    
+    return false;
+}
+
+tableSort();
+
 function setAttributes(elem, attrs) {
     for (const key in attrs) {
         elem.setAttribute(key, attrs[key]);
@@ -138,34 +169,3 @@ function tableSort() {
         createTableRow(+index + 1, data[index].platform, data[index].id);
     }
 }
-
-if (!localStorage.getItem('entries')) {
-    const entries = [];
-    localStorage.setItem('entries', JSON.stringify(entries));
-}
-
-document.getElementById('add').onsubmit = () => {
-    const platform = document.getElementById('platform');
-    const id = document.getElementById('id');
-    const data = JSON.parse(localStorage.entries);
-
-    for (const entry of data) {
-        if (platform.value.toUpperCase() === entry.platform.toUpperCase()) {
-            createNotif('That entry already exists');
-            return false;
-        }
-    }
-
-    data.push({ 'platform': platform.value, 'id': id.value })
-    localStorage.setItem('entries', JSON.stringify(data));
-
-    platform.value = '';
-    id.value = '';
-
-    tableSort();
-    createNotif('Entry saved');
-    
-    return false;
-}
-
-tableSort();
