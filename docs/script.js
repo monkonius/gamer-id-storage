@@ -143,7 +143,8 @@ function createTableRow(number, platform, id) {
     const cell3 = row.insertCell(2);
     const cell4 = row.insertCell(3);
 
-    cell1.innerHTML = number;
+    cell1.innerHTML = number + '.';
+    cell1.setAttribute('class', 'text-center');
     cell2.innerHTML = platform;
     cell3.innerHTML = id;
     cell4.append(copy, edit, del);
