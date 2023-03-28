@@ -606,8 +606,8 @@ video {
   padding-bottom: 3rem;
 }
 
-.pt-20 {
-  padding-top: 5rem;
+.pt-12 {
+  padding-top: 3rem;
 }
 
 .text-left {
@@ -801,6 +801,10 @@ tbody > tr:hover {
 
   .md\:w-48 {
     width: 12rem;
+  }
+
+  .md\:pt-20 {
+    padding-top: 5rem;
   }
 
   .md\:text-5xl {
