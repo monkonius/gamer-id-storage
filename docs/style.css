@@ -680,19 +680,19 @@ tbody > tr:hover {
   border-radius: 0.25rem;
   border-width: 1px;
   --tw-border-opacity: 1;
-  border-color: rgb(76 29 149 / var(--tw-border-opacity));
+  border-color: rgb(49 46 129 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   padding-left: 1rem;
   padding-right: 1rem;
   font-weight: 600;
   --tw-text-opacity: 1;
-  color: rgb(76 29 149 / var(--tw-text-opacity));
+  color: rgb(49 46 129 / var(--tw-text-opacity));
 }
 
 .btn:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(76 29 149 / var(--tw-bg-opacity));
+  background-color: rgb(49 46 129 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }

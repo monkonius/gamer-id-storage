@@ -23,7 +23,7 @@ tbody > tr {
 }
 
 .btn {
-    @apply bg-white text-violet-900 border-violet-900 hover:bg-violet-900 hover:text-white font-semibold h-[42px] px-4 border rounded;
+    @apply bg-white text-indigo-900 border-indigo-900 hover:bg-indigo-900 hover:text-white font-semibold h-[42px] px-4 border rounded;
 }
 
 .show {
