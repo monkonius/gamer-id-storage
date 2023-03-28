@@ -11,33 +11,43 @@
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
 </head>
 <body class="min-h-screen">
-    <div class="mx-auto px-6 md:max-w-4xl min-h-screen">
-        <section class="pt-20 pb-12">
-            <h1 class="text-4xl font-bold">Gamer ID Storage</h1>
-            <p class="mt-2 text-lg text-gray-600">One place to store all of your gamer tags and IDs for easy referral</p>
-        </section>
-        <section class="border-t-2 py-12">
-            <h2 class="text-2xl font-bold">Add Entry</h2>
-            <form id="add" class="mt-4">
-                <input class="text-input" type="text" name="platform" id="platform" autocomplete="off" required placeholder="Platform">
-                <input class="text-input" type="text" name="id" id="id" autocomplete="off" required placeholder="ID">
-                <input class="btn cursor-pointer max-sm:mt-2" type="submit" value="Save">
-            </form>
-        </section>
-        <section class="border-t-2 py-12">
-            <h2 class="text-2xl font-bold">Tags</h2>
-            <table class="mt-4 w-full border shadow">
-                <thead class="bg-gray-50 border-b-2 border-gray-600">
-                    <tr>
-                        <th class="p-2 w-4 text-left">No.</th>
-                        <th class="p-2 text-left">Platform</th>
-                        <th class="p-2 w-64 text-left">ID</th>
-                        <th class="p-2 w-64 text-center">Options</th>
-                    </tr>
-                </thead>
-                <tbody></tbody>
-            </table>
-        </section>
-    </div>
+    <section>
+        <div class="pt-20 pb-12">
+            <div class="content">
+                <h1 class="text-4xl font-bold">Gamer ID Storage</h1>
+                <p class="mt-2 text-lg">One place to store all of your gamer tags and IDs for easy referral</p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="py-12">
+            <div class="content">
+                <h2 class="text-2xl font-bold">Add Entry</h2>
+                <form id="add" class="mt-4">
+                    <input class="text-input" type="text" name="platform" id="platform" autocomplete="off" required placeholder="Platform">
+                    <input class="text-input" type="text" name="id" id="id" autocomplete="off" required placeholder="ID">
+                    <input class="btn cursor-pointer max-sm:mt-2" type="submit" value="Save">
+                </form>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="py-12">
+            <div class="content">
+                <h2 class="text-2xl font-bold">Tags</h2>
+                <table class="mt-4 w-full border shadow">
+                    <thead class="bg-gray-50 border-b-2 border-gray-600">
+                        <tr>
+                            <th class="p-2 w-4 text-left">No.</th>
+                            <th class="p-2 text-left">Platform</th>
+                            <th class="p-2 w-64 text-left">ID</th>
+                            <th class="p-2 w-64 text-center">Options</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
 </body>
 </html>

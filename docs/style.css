@@ -513,11 +513,6 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -558,10 +553,6 @@ video {
   border-bottom-width: 2px;
 }
 
-.border-t-2 {
-  border-top-width: 2px;
-}
-
 .border-gray-600 {
   --tw-border-opacity: 1;
   border-color: rgb(75 85 99 / var(--tw-border-opacity));
@@ -574,11 +565,6 @@ video {
 
 .p-2 {
   padding: 0.5rem;
-}
-
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
 }
 
 .py-12 {
@@ -625,11 +611,6 @@ video {
   font-weight: 600;
 }
 
-.text-gray-600 {
-  --tw-text-opacity: 1;
-  color: rgb(75 85 99 / var(--tw-text-opacity));
-}
-
 .shadow {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
@@ -668,6 +649,19 @@ tbody > tr:hover {
 @media (min-width: 768px) {
   #notif {
     height: 42px;
+  }
+}
+
+.content {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .content {
+    max-width: 56rem;
   }
 }
 
@@ -751,11 +745,5 @@ tbody > tr:hover {
 @media not all and (min-width: 640px) {
   .max-sm\:mt-2 {
     margin-top: 0.5rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .md\:max-w-4xl {
-    max-width: 56rem;
   }
 }

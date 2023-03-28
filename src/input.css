@@ -14,6 +14,10 @@ tbody > tr {
     @apply bg-white shadow border rounded fixed top-8 left-1/2 py-2 px-4 md:h-[42px] -translate-x-1/2 text-center;
 }
 
+.content {
+    @apply mx-auto px-6 md:max-w-4xl;
+}
+
 .text-input {
     @apply border rounded px-3 py-2 w-2/5;
 }
