@@ -5,7 +5,8 @@
   "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tailwindcss -i ./src/input.css -o ./docs/style.css --watch"
+    "dev": "tailwindcss -i ./src/input.css -o ./docs/style.css --watch",
+    "build": "tailwind -i ./src/input.css -o ./docs/style.css --minify"
   },
   "keywords": [],
   "author": "",
